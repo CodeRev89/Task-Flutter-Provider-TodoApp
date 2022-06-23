@@ -4,8 +4,11 @@ import 'package:provider/provider.dart';
 import 'package:todo_app/pages/add_page.dart';
 import 'package:todo_app/pages/home_page.dart';
 
+import 'Provider/todo_provider.dart';
+
 void main() {
-  runApp(MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (context) => todoProvider(), child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
